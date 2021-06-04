@@ -1,4 +1,4 @@
-const url = "http://dinakvivesen.com/sugarandspice/wp-json/wp/v2/posts/";
+const url = "https://dinakvivesen.com/sugarandspice/wp-json/wp/v2/posts/";
 const corsFix = "https://noroffcors.herokuapp.com/" + url;
 
 const productContainer = document.querySelector(".slider");
@@ -23,7 +23,7 @@ function createHTML(posts){
             break;
         }
        var post = posts[i];
-        console.log(posts[i]);
+        
         productContainer.innerHTML += `<section><a href="blogspecific.html?id=${post.id}" class="container">
                                         <div>
                                         <img src="${post.featured_media_src_url}">
@@ -32,18 +32,6 @@ function createHTML(posts){
                                         </div></section>`;
          
     } 
-
-    /* posts.forEach(function(post){
-        productContainer.innerHTML += `<section><a href="blogspecific.html?id=${post.id}" class="container">
-                                        <div>
-                                        <img src="${post.featured_media_src_url}">
-                                        <h2>${post.title.rendered}</h2>
-                                        <p>${post.excerpt.rendered}<p>
-                                        </div></section>`;
-                    
-                                        
-    }) */
-    
 } 
 
 const slider = document.querySelector(".slider");
